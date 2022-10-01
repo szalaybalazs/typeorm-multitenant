@@ -1,0 +1,33 @@
+[
+  {
+    "schema": "TENANT",
+    "name": "tenant",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "admin",
+    "password": "admin",
+    "database": "multitenant",
+    "entities": ["./src/typeorm/entities/tenant/*.entity.ts"],
+    "migrations": ["./src/typeorm/migrations/tenant/*.ts"],
+    "cli": {
+      "entitiesDir": "./src/typeorm/entities/tenant",
+      "migrationsDir": "./src/typeorm/migrations/tenant"
+    }
+  },
+  {
+    "name": "public",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "admin",
+    "password": "admin",
+    "database": "multitenant",
+    "entities": ["./src/typeorm/entities/public/*.entity.ts"],
+    "migrations": ["./src/typeorm/migrations/public/*.ts"],
+    "cli": {
+      "entitiesDir": "./src/typeorm/entities/public",
+      "migrationsDir": "./src/typeorm/migrations/public"
+    }
+  }
+]
